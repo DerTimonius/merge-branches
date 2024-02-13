@@ -32,8 +32,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Test Local Action
-        if: github.ref == "refs/head/main"
-        uses: DerTimonius/merge-branches@v1
+        uses: DerTimonius/merge-git-branches@v1
         with:
           token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
           branches: develop
@@ -60,8 +59,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Test Local Action
-        if: github.ref == "refs/head/main"
-        uses: DerTimonius/merge-branches@v1
+        uses: DerTimonius/merge-git-branches@v1
         with:
           token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
           branches: [develop, hotfix]
