@@ -1,7 +1,6 @@
 name: 'Merge git branches'
 description:
-  'Keep multiple branches up to date. Especially useful after creating a release
-  and needing multiple branches to always have the same basis.'
+  'Keep multiple branches up to date within your CI workflows.'
 author: 'Timon Jurschitsch'
 
 # Add your action's branding here. This will appear on the GitHub Marketplace.
