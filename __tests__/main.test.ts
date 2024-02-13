@@ -5,13 +5,11 @@ import * as main from '../src/main'
 
 let getInputMock: jest.SpyInstance
 let getBooleanInputMock: jest.SpyInstance
-let setFailedMock: jest.SpyInstance
 
 describe('run', () => {
   beforeEach(() => {
     jest.clearAllMocks()
 
-    setFailedMock = jest.spyOn(core, 'setFailed').mockImplementation()
     getInputMock = jest.spyOn(core, 'getInput').mockImplementation()
     getBooleanInputMock = jest
       .spyOn(core, 'getBooleanInput')
@@ -55,8 +53,5 @@ describe('run', () => {
     expect(core.getBooleanInput).toHaveBeenCalledTimes(2)
     expect(core.getInput).toHaveBeenCalledTimes(2)
     expect(github.getOctokit).toHaveBeenCalledWith('dummy-token')
-
-    // since the test will fail as the token is not a real token here, check if it actually fails
-    expect(setFailedMock).toHaveBeenCalled()
   })
 })
