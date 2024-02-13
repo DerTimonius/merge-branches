@@ -1,0 +1,22 @@
+name: Merge branches
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  merge-branches:
+    name: Merge main into develop
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test Local Action
+        if: github.ref == "refs/head/main"
+        uses: ./
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branches: develop
+          force: true

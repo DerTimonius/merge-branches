@@ -23,13 +23,13 @@ inputs:
     description:
       'Defines if the commit should be force-pushed or not. Default is false.'
     required: false
-    default: false
+    default: 'false'
   checkTags:
     description:
       'Enable tag checks by setting checkTags to true if you want to include tag
       validation in the GitHub Action workflow. Default is true.'
     required: false
-    default: true
+    default: 'true'
 
 runs:
   using: node20

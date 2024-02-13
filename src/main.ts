@@ -10,15 +10,15 @@ import { mergeBranches } from './mergeBranches'
  */
 export async function run(): Promise<void> {
   try {
-    const githubToken = core.getInput('token')
-    const octokit = github.getOctokit(githubToken)
-    const { ref, repo, sha } = github.context
+    const force = core.getBooleanInput('force')
+    const checkTags = core.getBooleanInput('checkTags')
 
     const branchesInput = core.getInput('branches')
     const branches = getBranches(branchesInput)
 
-    const force = core.getBooleanInput('force')
-    const checkTags = core.getBooleanInput('checkTags')
+    const githubToken = core.getInput('token')
+    const octokit = github.getOctokit(githubToken)
+    const { ref, repo, sha } = github.context
 
     await Promise.all(
       branches.map(async branch => {
