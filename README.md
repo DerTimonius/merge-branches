@@ -82,6 +82,8 @@ head of the protected branch, the action fails.
 
 ## Options
 
+<!-- markdownlint-disable MD013-->
+
 | Name                                      | Type             | Description                                                                       |
 | ----------------------------------------- | ---------------- | --------------------------------------------------------------------------------- |
 | `token`                                   | required         | GitHub Personal Access Token needed for the commit.                               |
@@ -89,3 +91,5 @@ head of the protected branch, the action fails.
 | `force`                                   | default: `false` | Defines if the commit should be force-pushed or not.                              |
 | `checkTags`                               | default: `false` | Enable tag checks by setting checkTags to true if you want to include tag         |
 | validation in the GitHub Action workflow. |
+
+<!-- markdownlint-enable MD013-->
