@@ -17,6 +17,6 @@ jobs:
         if: github.ref == "refs/head/main"
         uses: ./
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
           branches: develop
           force: true

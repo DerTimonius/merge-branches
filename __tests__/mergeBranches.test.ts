@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow, filenames/match-regex */
 import * as github from '@actions/github'
 
 import { mergeBranches } from '../src/mergeBranches'
@@ -146,6 +147,7 @@ describe('mergeBranches.ts', () => {
     // Mock GitHub API calls
     octokit.rest.repos.listBranchesForHeadCommit = jest
       .fn()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .mockResolvedValueOnce({ data: [] }) as any
 
     const result = await mergeBranches({
@@ -166,6 +168,7 @@ describe('mergeBranches.ts', () => {
     // Mock GitHub API calls
     octokit.rest.repos.listBranchesForHeadCommit = jest
       .fn()
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .mockResolvedValueOnce({ data: [{ protected: false }] }) as any
 
     const result = await mergeBranches({

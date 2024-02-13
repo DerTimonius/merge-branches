@@ -1,3 +1,5 @@
+/* eslint-disable filenames/match-regex */
+
 /**
  * Unit tests for src/getBranches.ts
  */

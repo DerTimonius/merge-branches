@@ -2,7 +2,7 @@ import * as github from '@actions/github'
 
 export async function mergeBranches({
   branch,
-  checkTags = true,
+  checkTags,
   force,
   octokit,
   ref,
@@ -10,7 +10,7 @@ export async function mergeBranches({
   sha
 }: {
   branch: string
-  checkTags?: boolean
+  checkTags: boolean
   force: boolean
   octokit: ReturnType<typeof github.getOctokit>
   ref: string
@@ -51,7 +51,7 @@ export async function mergeBranches({
   const response = await octokit.rest.git.updateRef({
     ...repo,
     force,
-    sha: sha,
+    sha,
     ref: `heads/${branch}`
   })
 
