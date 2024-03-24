@@ -39,8 +39,8 @@ jobs:
           force: true
 ```
 
-You can also pass in multiple branches in an array (you have to use brackets and wrap them in quotes for
-this work properly):
+You can also pass in multiple branches in an array (you have to use brackets and
+wrap them in quotes for this work properly):
 
 ```yaml
 name: Merge branches
@@ -62,7 +62,7 @@ jobs:
         uses: DerTimonius/merge-git-branches@v1
         with:
           token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
-          branches: "[develop, hotfix]"
+          branches: '[develop, hotfix]'
           force: true
 ```
 
@@ -82,12 +82,11 @@ head of the protected branch, the action fails.
 
 <!-- markdownlint-disable MD013-->
 
-| Name                                      | Type             | Description                                                                       |
-| ----------------------------------------- | ---------------- | --------------------------------------------------------------------------------- |
-| `token`                                   | required         | GitHub Personal Access Token needed for the commit.                               |
-| `branches`                                | required         | The branches that should be updated. For example `develop` or `"[develop, hotfix]"` |
-| `force`                                   | default: `false` | Defines if the commit should be force-pushed or not.                              |
-| `checkTags`                               | default: `false` | Enable tag checks by setting checkTags to true if you want to include tag         |
-| validation in the GitHub Action workflow. |
+| Name        | Type             | Description                                                                                                         |
+| ----------- | ---------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `token`     | required         | GitHub Personal Access Token needed for the commit.                                                                 |
+| `branches`  | required         | The branches that should be updated. For example `develop` or `"[develop, hotfix]"`                                 |
+| `force`     | default: `false` | Defines if the commit should be force-pushed or not.                                                                |
+| `checkTags` | default: `false` | Enable tag checks by setting checkTags to true if you want to include tag validation in the GitHub Action workflow. |
 
 <!-- markdownlint-enable MD013-->
